@@ -1,7 +1,7 @@
 /**
 * Esta aplicación calcula el triángulo de Tartaglia de tamañano igual al parametro introducido.
 *
-* @author oscar.gomezb@estudiante.eps@uam.es, joseignacio.gomezg@estudiante.eps@uam.es
+* @author Óscar Gómez Borzdynski, José Ignacio Gómez García
 *
 */
 
@@ -28,7 +28,6 @@ public class Tartaglia {
 		x++; //Para poder empezar en el nivel correcto
 
 		int[][] tartaglia = new int[x][]; // declarar el array bidimensional de enteros
-
 		tartaglia[0] = new int[1];
 		tartaglia[0][0] = 1; //Primer nivel de Tartaglia
 

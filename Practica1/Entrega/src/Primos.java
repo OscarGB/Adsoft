@@ -1,7 +1,7 @@
 /**
 * Esta aplicación comprueba si los primos pasados como argumento son primos
 *
-* @author oscar.gomezb@estudiante.eps@uam.es, joseignacio.gomezg@estudiante.eps@uam.es
+* @author Óscar Gómez Borzdynski, José Ignacio Gómez García 
 *
 */
 
