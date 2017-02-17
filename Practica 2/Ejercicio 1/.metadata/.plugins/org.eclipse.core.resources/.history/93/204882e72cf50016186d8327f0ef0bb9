@@ -1,10 +1,6 @@
 package eps.uam.ads.p2.autoescuela.tester;
 import eps.uam.ads.p2.autoescuela.alumnos.Alumno;
 
-/**
- * Tester el primer apartado de la P2
- * @author Profesores ADS
- */
 
 public class TesterAlumnos {
 	public static void main(String[] args) {

@@ -7,6 +7,14 @@ package eps.uam.ads.p2.autoescuela.alumnos;
  *
  */
 
+/**
+ * @author Nacho
+ *
+ */
+/**
+ * @author Nacho
+ *
+ */
 public class Alumno {
 	
 	private int dni;
