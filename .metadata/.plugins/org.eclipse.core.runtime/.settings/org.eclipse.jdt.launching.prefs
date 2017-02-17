@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1486571154550">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1486571154550" name\="jre1.8.0_121" path\="C\:\\Program Files\\Java\\jre1.8.0_121"/>\r\n</vmType>\r\n</vmSettings>\r\n
+<<<<<<< HEAD
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1486571154550" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1486571154550" name\="jre1.8.0_121" path\="C\:\\Program Files\\Java\\jre1.8.0_121"/>\r\n</vmType>\r\n</vmSettings>\r\n
+=======
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1486660861583" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1486660861583" name\="java-8-openjdk-amd64" path\="/usr/lib/jvm/java-8-openjdk-amd64"/>\n</vmType>\n</vmSettings>\n
+>>>>>>> 20097c2af6b4dd56b34c058ac34162e2c5c05f65

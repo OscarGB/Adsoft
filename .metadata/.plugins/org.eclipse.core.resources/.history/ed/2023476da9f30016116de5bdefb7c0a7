@@ -1,0 +1,6 @@
+package clase20170215;
+
+public class Abstracta {
+	protected String title;
+	protected String year;
+}

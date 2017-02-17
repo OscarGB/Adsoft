@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+[[{"location":"C:\\Users\\Oscar\\Adsoft\\Clases","type":"PROJECT","hints":{"PROJECT_NAME":"Clases"}},"ABSENT"],[{"location":"C:\\Program Files\\Java\\jre1.8.0_121","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"]]
+=======
+[[{"location":"/home/oscar/Uni/Adsoft/Clases","type":"PROJECT","hints":{"PROJECT_NAME":"Clases"}},"ABSENT"],[{"location":"/usr/lib/jvm/java-8-openjdk-amd64","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"]]
+>>>>>>> 20097c2af6b4dd56b34c058ac34162e2c5c05f65
