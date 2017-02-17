@@ -9,44 +9,13 @@ package eps.uam.ads.p2.autoescuela.alumnos;
 
 public class Alumno {
 	
-	/**
-	 * DNI del alumno
-	 */
 	private int dni;
-	
-	/**
-	 * Nombre del alumno 
-	 */
 	private String nombre;
-	
-	/**
-	 * Apellidos del alumno
-	 */
 	private String apellidos;
-	
-	/**
-	 * Dirección del alumno
-	 */
 	private String direccion;
-	
-	/**
-	 * Teléfono del alumno
-	 */
 	private int telefono;
-	
-	/**
-	 * Fecha de matriculación del alumno
-	 */
 	private Fecha fechaMatricula;
-	
-	/**
-	 * Fecha de superación del teórico
-	 */
 	private Fecha fechaSupTeorico;
-	
-	/**
-	 * Fecha de superación del práctico
-	 */
 	private Fecha fechaSupPractico;
 
 	/**

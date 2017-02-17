@@ -28,25 +28,9 @@ public class Alumno {
 	 * Dirección del alumno
 	 */
 	private String direccion;
-	
-	/**
-	 * Teléfono del alumno
-	 */
 	private int telefono;
-	
-	/**
-	 * Fecha de matriculación del alumno
-	 */
 	private Fecha fechaMatricula;
-	
-	/**
-	 * Fecha de superación del teórico
-	 */
 	private Fecha fechaSupTeorico;
-	
-	/**
-	 * Fecha de superación del práctico
-	 */
 	private Fecha fechaSupPractico;
 
 	/**
