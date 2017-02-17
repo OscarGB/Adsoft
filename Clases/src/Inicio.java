@@ -15,8 +15,12 @@ public class Inicio {
 		System.out.println(s);*/
 		
 		Empleado e1 = new Empleado();
+		Empleado e2 = new Empleado();
+		Empleado e3 = new Empleado();
 		
-		e1.mostrarDatos();
+		for (Persona p : personas):
+			p.mostrarDatos();			
+		
 		
 	}
 }
