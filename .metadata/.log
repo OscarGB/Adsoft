@@ -26,6 +26,7 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.egit.core 4 0 2017-02-08 19:41:38.929
 !MESSAGE An exception occurred during push on URI https://github.com/OscarGB/Adsoft.git: https://github.com/OscarGB/Adsoft.git: not authorized
@@ -43,3 +44,15 @@ Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/OscarG
 	at org.eclipse.jgit.transport.Transport.push(Transport.java:1250)
 	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:158)
 	... 4 more
+=======
+!SESSION 2017-02-09 18:20:54.576 -----------------------------------------------
+eclipse.buildId=4.6.2.M20161124-1400
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data /home/oscar/Adsoft -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-02-09 18:20:58.601
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+>>>>>>> 20097c2af6b4dd56b34c058ac34162e2c5c05f65

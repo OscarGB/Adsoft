@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class Inicio {
 	private static Scanner terminalInput;
-
+	private static Persona[] p = new Persona[3];
+	
 	public static void main(String[] args) throws IOException{
 		terminalInput = new Scanner(System.in);
 
@@ -14,9 +15,13 @@ public class Inicio {
 		
 		System.out.println(s);*/
 		
-		Empleado e1 = new Empleado();
-		
-		e1.mostrarDatos();
+		p[0] = new Empleado();
+		p[1] = new Directivo();
+		p[2] = new Persona();
+		for( Persona i : p){
+			i.mostrarDatos();
+		}
+		//e1.mostrarDatos();
 		
 	}
 }
