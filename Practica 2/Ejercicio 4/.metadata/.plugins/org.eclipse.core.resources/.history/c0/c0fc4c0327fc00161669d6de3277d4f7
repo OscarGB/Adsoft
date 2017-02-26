@@ -1,0 +1,10 @@
+package eps.uam.ads.p4.autoescuela.tester;
+
+public class TesterProfesor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package eps.uam.ads.p4.autoescuela.profesor;
+
+import eps.uam.ads.p4.autoescuela.alumnos.Fecha;
+import eps.uam.ads.p4.autoescuela.autoescuela.Autoescuela;
+
+/**
+ * Esta clase refiere a los profesores de la autoescuela
+ * 
+ * @author José Ignacio Gómez García, Óscar Gómez Borzdynski
+ *
+ */
+public class Profesor {
+	
+	/**
+	 * Fecha de inicio de trabajo en la autoescuela
+	 */
+	private Fecha fechaIni;
+	
+	/**
+	 * Fecha de fin de trabajo en la autoescuela
+	 */
+	private Fecha fechaFin;
+	
+	/**
+	 * Nombre del profesor
+	 */
+	private String nombre;
+	
+	/**
+	 * Apellidos del profesor
+	 */
+	private String apellidos;
+	
+	private Autoescuela trabaja;
+	
+	public Profesor(){
+		
+	}
+}

@@ -1,0 +1,16 @@
+package eps.uam.ads.p4.autoescuela.tester;
+
+/**
+ * Tester del cuarto apartado de la P2
+ * 
+ * @author José Ignacio Gómez García, Óscar Gómez Borzdynski
+ *
+ */
+public class TesterProfesor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

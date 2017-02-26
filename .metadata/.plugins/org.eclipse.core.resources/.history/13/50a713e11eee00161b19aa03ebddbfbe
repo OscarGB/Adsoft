@@ -1,9 +1,0 @@
-import java.io.IOException;
-
-public class Inicio {
-	public static void main(String[] args) throws IOException{
-		System.out.println("Hola Mundo");
-		char a = (char)System.in.read();
-		System.out.println("Escrito:" + a);
-	}
-}
