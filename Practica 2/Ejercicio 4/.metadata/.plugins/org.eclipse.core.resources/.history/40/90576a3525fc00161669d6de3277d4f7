@@ -1,0 +1,5 @@
+package eps.uam.ads.p4.autoescuela.profesor;
+
+public class Profesor {
+
+}
