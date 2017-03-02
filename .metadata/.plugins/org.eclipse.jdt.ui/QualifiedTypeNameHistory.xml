@@ -1,9 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<<<<<<< HEAD
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-=======
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
->>>>>>> 20097c2af6b4dd56b34c058ac34162e2c5c05f65
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>

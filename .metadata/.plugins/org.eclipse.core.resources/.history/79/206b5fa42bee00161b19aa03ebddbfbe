@@ -1,4 +1,0 @@
-
-public class Empleado extends Persona {
-	public String correo = "Prueba@gmail.com";
-}
