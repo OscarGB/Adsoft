@@ -1,0 +1,18 @@
+package piezas;
+
+public class Pieza {
+	private double peso;
+	private static int numPiezas = 0;
+	private int id;
+	
+	public Pieza(double d){
+		this.peso = d;
+		Pieza.numPiezas++;
+		this.id = Pieza.numPiezas;
+	}
+	
+	@Override
+	public String toString() {
+		return this.id + " : " + this.peso;
+	}
+}
