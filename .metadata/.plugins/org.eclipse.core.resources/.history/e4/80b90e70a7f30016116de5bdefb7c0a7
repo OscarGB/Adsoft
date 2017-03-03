@@ -1,7 +1,0 @@
-package clase20170215;
-
-public class Cancion {
-	private String title;
-	private String duration;
-	private String year;
-}
