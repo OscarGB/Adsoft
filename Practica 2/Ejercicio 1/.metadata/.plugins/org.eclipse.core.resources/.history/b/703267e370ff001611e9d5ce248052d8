@@ -1,0 +1,10 @@
+package ejercicioClase1;
+
+public class mainPieza {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

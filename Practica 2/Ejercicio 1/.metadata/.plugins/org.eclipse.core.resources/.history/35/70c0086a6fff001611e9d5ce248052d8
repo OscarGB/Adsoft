@@ -1,0 +1,18 @@
+package ejercicioClase1;
+
+public class Pieza {
+	private double peso;
+	private int id;
+	private static int numPiezas; /*Al hacerlo static, nos asguramos que 
+	 							es una variable de clase y no podrá ser modificada por objeto?*/
+	
+	public Pieza(double d){
+		this.peso = d;
+		numPiezas++;
+	}
+	
+	@Override
+	public String toString() {
+		return this.ident+" : "+this.peso;
+	}
+}

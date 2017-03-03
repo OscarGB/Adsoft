@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+C:\Users\Nacho\Desktop\Uni\SEGUNDO\Adsoft\Practica3\.metadata\.plugins\org.eclipse.jdt.core
+1578390607.index

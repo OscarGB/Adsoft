@@ -1,0 +1,15 @@
+/* Crea un programa java que permita crear Piezas con un determinado peso
+ * A cada pieza se le asignará automáticamente un identificador único.
+ * La clase pieza debe contener un método estático que devuelva la pieza
+ * más pesada creada hasta el momento.
+*/
+
+package ejercicioClase1;
+
+public class mainPieza {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
