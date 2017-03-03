@@ -1,9 +1,0 @@
-package piezas;
-
-public class Pieza {
-	private double peso;
-	
-	public Pieza(double d){
-		this.peso = d;
-	}
-}

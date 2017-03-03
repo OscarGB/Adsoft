@@ -1,9 +1,0 @@
-package piezas;
-
-public class MainPiezas {
-
-	public static void main(String[] args){
-		Pieza p1 = new Pieza(4.5);
-	}
-	
-}

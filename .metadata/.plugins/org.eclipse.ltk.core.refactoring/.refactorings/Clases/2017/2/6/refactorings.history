@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Convert local variable &apos;Inicio.main().terminalInput&apos; in &apos;Inicio.main()&apos; to field&#x0D;&#x0A;- Original project: &apos;Clases&apos;&#x0D;&#x0A;- Original element: &apos;Inicio.main().terminalInput&apos;&#x0D;&#x0A;- Field name: &apos;terminalInput&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Declare field &apos;static&apos;" description="Convert local variable &apos;terminalInput&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;{Inicio.java" name="terminalInput" selection="176 38" stamp="1486572755942" static="true" version="1.0" visibility="2"/>
-</session>
