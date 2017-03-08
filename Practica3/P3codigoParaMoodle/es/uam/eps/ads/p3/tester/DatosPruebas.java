@@ -3,6 +3,8 @@ import static es.uam.eps.ads.p3.tester.DatosPruebas.e11;
 import static es.uam.eps.ads.p3.tester.DatosPruebas.u1;
 
 import es.uam.eps.ads.p3.biblioteca.*;
+import es.uam.eps.ads.p3.biblioteca.obra.*;
+import es.uam.eps.ads.p3.biblioteca.usuario.*;
 
 /**
  * Datos comunes para testers de la práctica 3

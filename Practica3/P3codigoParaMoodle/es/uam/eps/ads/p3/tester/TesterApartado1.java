@@ -1,6 +1,8 @@
 package es.uam.eps.ads.p3.tester;
 
 import es.uam.eps.ads.p3.biblioteca.*;
+import es.uam.eps.ads.p3.biblioteca.prestamo.Prestamo;
+
 import static es.uam.eps.ads.p3.tester.DatosPruebas.*;
 /**
  * Tester Apartado 1 de la práctica 3
