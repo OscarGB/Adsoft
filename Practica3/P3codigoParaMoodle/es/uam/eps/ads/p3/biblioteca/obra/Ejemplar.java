@@ -19,5 +19,13 @@ public class Ejemplar {
 	public Ejemplar(Obra obra) {
 		this.obra = obra;
 	}
+
+	/**
+	 * Getter de la Obra de un Ejemplar
+	 * @return obra
+	 */
+	public Obra getObra() {
+		return this.obra;
+	}
 	
 }

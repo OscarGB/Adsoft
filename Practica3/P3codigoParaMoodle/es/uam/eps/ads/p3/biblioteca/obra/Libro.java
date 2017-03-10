@@ -17,6 +17,21 @@ public class Libro extends Obra{
 	 */
 	private int numedicion;
 	
+	/**
+	 * Plazo de préstamo del libro
+	 */
+	private int plazo;
+	
+	/**
+	 * Número de veces que el libro ha sido prestado
+	 */
+	private int prestamos;
+	
+	/**
+	 * Macro para definir el plazo de libro predeterminado
+	 */
+	private static int PLAZO_LIBRO = 25;
+	
 	
 	/**
 	 * Constructor de la clase Libro
@@ -30,6 +45,8 @@ public class Libro extends Obra{
 		super(nombre, autor, anio);
 		this.editorial = editorial;
 		this.numedicion = numedicion;
+		this.plazo = PLAZO_LIBRO;
+		this.prestamos = 0;
 	}
 
 	/**
@@ -42,6 +59,8 @@ public class Libro extends Obra{
 		super(nombre, autor, anio);
 		this.editorial = null;
 		this.numedicion = 0;
+		this.plazo = PLAZO_LIBRO;
+		this.prestamos = 0;
 	}
 
 	/**
@@ -74,7 +93,25 @@ public class Libro extends Obra{
 		this.numedicion = numedicion;
 	}
 
+	/**
+	 * Función toString de Libro
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		return "[L:" + this.titulo + ", " + this.autor + " (" + this.anio + ") plazo:" + this.plazo + "]";
+	}
 	
-	
+	/**
+	 * Función que incrementa el número de veces que
+	 * ha sido prestado (popularidad)
+	 */
+	public void obraDevuelta() {
+		this.prestamos++;
+		if(this.prestamos == 10) {
+			this.prestamos = 0;
+			this.plazo -= 1;
+		}
+	}
 	
 }

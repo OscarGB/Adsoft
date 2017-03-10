@@ -14,17 +14,17 @@ public abstract class Usuario {
 	/**
 	 * Nombre del usuario
 	 */
-	private String nombre;
+	protected String nombre;
 	
 	/**
 	 * Número máximo de préstamos
 	 */
-	private int maxPrestamos;
+	protected int maxPrestamos;
 	
 	/**
 	 * Array de préstamos
 	 */
-	private ArrayList<Prestamo> prestamos;
+	protected ArrayList<Prestamo> prestamos;
 	
 	/**
 	 * Constructor de Usuario
@@ -49,7 +49,8 @@ public abstract class Usuario {
 	 * @param pf prestamo
 	 */
 	public void eliminarPrestamo(Prestamo pf) {
-		prestamos.remove(pf);		
+		prestamos.remove(pf);	
+		pf.prestamoDevuelto();
 	}
 
 	/**
@@ -59,6 +60,22 @@ public abstract class Usuario {
 	 */
 	public void sancionarPorRetraso(int i) {
 		return;		
+	}
+	
+	/**
+	 * Función para eliminar una sanción
+	 */
+	public void eliminarSancion(){
+		return;
+	}
+	
+	/**
+	 * Función toString para hacer override en Publico y Empleado
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		return null;
 	}
 	
 }

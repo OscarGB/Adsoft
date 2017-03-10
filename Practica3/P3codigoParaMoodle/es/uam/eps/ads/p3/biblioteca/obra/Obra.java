@@ -10,17 +10,17 @@ public abstract class Obra {
 	/**
 	 * titulo de una obra
 	 */
-	private String titulo;
+	protected String titulo;
 	
 	/**
 	 * autor/director de una obra
 	 */
-	private String autor; 
+	protected String autor; 
 	
 	/**
 	 * año de publicación
 	 */
-	private int anio;
+	protected int anio;
 	
 	/**
 	 * Constructor de Obra
@@ -32,5 +32,22 @@ public abstract class Obra {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.anio = anio;
+	}
+	
+	/**
+	 * Función toString para hacer override en Pelicula y Libro
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		return null;
+	}
+
+	/**
+	 * Función para ser seobreescrita en Libro, que incrementa el número de veces que
+	 * ha sido prestado (popularidad)
+	 */
+	public void obraDevuelta() {
+		return;		
 	}
 }

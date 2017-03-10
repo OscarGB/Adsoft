@@ -29,4 +29,11 @@ public class Prestamo {
 		this.ejemplar = ejemplar;
 		this.user = user;
 	}
+	
+	/**
+	 * Función para gestionar la devolución de un préstamo
+	 */
+	public void prestamoDevuelto() {
+		this.ejemplar.getObra().obraDevuelta();
+	}
 }

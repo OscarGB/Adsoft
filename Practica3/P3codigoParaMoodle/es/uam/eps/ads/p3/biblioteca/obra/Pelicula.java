@@ -13,6 +13,11 @@ public class Pelicula extends Obra {
 	Genero genero;
 	
 	/**
+	 * Plazo fijo de préstamo de una película
+	 */
+	public static int PLAZO_PELICULA = 2;
+	
+	/**
 	 * Constructor de la clase Película
 	 * @param nombre
 	 * @param autor
@@ -40,6 +45,13 @@ public class Pelicula extends Obra {
 		this.genero = genero;
 	}
 	
-	
+	/**
+	 * Función toString de Pelicula
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		return "[P:" + this.titulo + ", " + this.autor + " (" + this.anio + ") plazo:" + PLAZO_PELICULA + "]";
+	}
 	
 }
