@@ -28,7 +28,7 @@ public class Publico extends Usuario{
 		numDevueltos = 0;
 	}
 	
-	/* 
+	/** 
 	 * Función para gestionar la sanción por retraso de Publico
 	 * @param i, dias de retraso
 	 */

@@ -50,4 +50,19 @@ public abstract class Obra {
 	public void obraDevuelta() {
 		return;		
 	}
+	
+	/** 
+	 * Función que sobreescribe equals, comprobando si dos Obras son iguales.
+	 * @param other Obra a comparar.
+	 * @return boolean true si son iguales
+	 */
+	@Override
+	public boolean equals(Object other){
+		
+		if(this.titulo != ((Obra)other).titulo || this.autor != ((Obra)other).autor){
+			return false;
+		}
+		
+		return true;
+	}
 }

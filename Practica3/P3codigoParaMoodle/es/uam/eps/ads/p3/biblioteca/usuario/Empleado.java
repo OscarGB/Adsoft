@@ -1,7 +1,5 @@
 package es.uam.eps.ads.p3.biblioteca.usuario;
 
-import es.uam.eps.ads.p3.biblioteca.prestamo.Prestamo;
-
 /** 
  * Clase Empleado
  * @author José Ignacio Gómez, Óscar Gómez
@@ -29,7 +27,7 @@ public class Empleado extends Usuario{
 		sancion = 0.0f;
 	}
 	
-	/* 
+	/** 
 	 * Función para gestionar la sanción por retraso de Publico
 	 * @param i, dias de retraso
 	 */
