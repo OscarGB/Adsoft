@@ -61,4 +61,5 @@ public class Publico extends Usuario{
 	public String toString(){
 		return "[P: " + this.nombre + ",ppb:" + this.numDevueltos + ",ps:" + this.maxPrestamos + "]";
 	}
+	
 }
