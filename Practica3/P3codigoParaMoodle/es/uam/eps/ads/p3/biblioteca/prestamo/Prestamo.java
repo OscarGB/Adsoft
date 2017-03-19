@@ -1,6 +1,9 @@
 package es.uam.eps.ads.p3.biblioteca.prestamo;
+import java.time.LocalDate;
+
 import es.uam.eps.ads.p3.biblioteca.obra.Ejemplar;
 import es.uam.eps.ads.p3.biblioteca.usuario.Usuario;
+import es.uam.eps.ads.p3.fechasimulada.FechaSimulada;
 
 /** 
  * Clase para Prestamo
@@ -15,6 +18,10 @@ public class Prestamo {
 	 */
 	private Ejemplar ejemplar;
 	
+	/**
+	 * Fecha de fin de prestamo
+	 */
+	private String finPrestamo;
 	/**
 	 * Número de prestamos realizados
 	 */
@@ -40,6 +47,18 @@ public class Prestamo {
 		this.user = user;
 		Prestamo.prestamosHistorico++;
 		Prestamo.prestamosPendientes++;
+		int plazo = ejemplar.getPlazo();
+		FechaSimulada.avanzar(plazo);
+		this.finPrestamo = FechaSimulada.getHoy().toString();
+		FechaSimulada.avanzar(-plazo);
+	}
+	
+	/**
+	 * Devuelve la fecha de fin de prestamo.
+	 * @return
+	 */
+	public String getFinPrestamo(){
+		return this.finPrestamo;
 	}
 	
 	/**
@@ -82,10 +101,15 @@ public class Prestamo {
 		return Prestamo.prestamosPendientes;
 	}
 	
+	/**
+	 * Convierte el Prestamo a String
+	 * @return String
+	 */
 	@Override
 	public String toString(){
 		String aux;
-		aux += "{" + this.ejemplar.toString() + "(";
-		if(this.)
+		aux = this.ejemplar.toString();
+		return aux;
+		//if(this.)
 	}
 }

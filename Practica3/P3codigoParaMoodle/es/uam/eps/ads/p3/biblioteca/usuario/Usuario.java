@@ -51,7 +51,7 @@ public abstract class Usuario {
 	 * @param pf prestamo
 	 */
 	public void eliminarPrestamo(Prestamo pf) {
-		prestamos.remove(pf);	
+		prestamos.remove(pf);
 		pf.prestamoDevuelto();
 	}
 
@@ -92,7 +92,8 @@ public abstract class Usuario {
 	}
 
 	/**
-	 * @return 
+	 * Devuelve la lista de prestamos de un usuario
+	 * @return List<Prestamo>
 	 */
 	public List<Prestamo> getPrestamos() {
 		return Collections.unmodifiableList(this.prestamos);

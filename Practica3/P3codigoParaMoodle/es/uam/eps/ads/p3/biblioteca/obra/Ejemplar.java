@@ -71,10 +71,13 @@ public class Ejemplar {
 			Prestamo pf = new Prestamo(this, u1);
 			u1.anyadirPrestamo(pf);
 			this.pre = pf;
+			this.prestado = true;
 			return pf;
 		}
 		return null;
 	}
+	
+	
 
 	/**
 	 * Función para devolver un ejemplar.
@@ -91,14 +94,28 @@ public class Ejemplar {
 		
 	}
 	
+	/** 
+	 * Convierte el objeto ejemplar a String
+	 * @return String
+	 */
+	@Override
 	public String toString(){
 		String aux = "{" + this.identificador + this.obra.toString() + "(";
-		if(this.prestado = false){
+		if(this.prestado == false){
 			aux += "disponible)}";
 		}
 		else{
-			aux += "prestado)} prestado a " + ;
+			aux += "prestado)} prestado a " + pre.getUsuario().toString() + " hasta " + this.pre.getFinPrestamo();
 		}
+		return aux;
+	}
+
+	/**
+	 * devuelve el plazo de la obra del ejemplar
+	 * @return
+	 */
+	public int getPlazo() {
+		return this.obra.getPlazo();
 	}
 	
 }

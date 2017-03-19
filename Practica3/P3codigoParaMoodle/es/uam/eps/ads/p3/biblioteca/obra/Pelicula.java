@@ -53,5 +53,13 @@ public class Pelicula extends Obra {
 	public String toString(){
 		return "[P:" + this.titulo + ", " + this.autor + " (" + this.anio + ") plazo:" + PLAZO_PELICULA + "]";
 	}
+	/**
+	 * Devuelve el plazo de devuelta de un libro
+	 * @return 
+	 */
+	@Override
+	public int getPlazo(){
+		return PLAZO_PELICULA;
+	}
 	
 }

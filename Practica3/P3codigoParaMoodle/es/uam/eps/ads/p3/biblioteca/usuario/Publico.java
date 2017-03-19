@@ -39,18 +39,27 @@ public class Publico extends Usuario{
 	}
 	
 	/**
-	 * Función para devolver préstamos incrementando los acumulados
+	 * Función para devolver préstamos
 	 * @param pf prestamo
 	 */
 	@Override
 	public void eliminarPrestamo(Prestamo pf) {
 		prestamos.remove(pf);
+		pf.prestamoDevuelto();
+	}
+	
+	/**
+	 * Función para añadir préstamos incrementando los acumulados
+	 * @param pf prestamo
+	 */
+	@Override
+	public void anyadirPrestamo(Prestamo pf) {
 		this.numDevueltos++;
 		if(this.numDevueltos > this.maxPrestamos){
 			this.maxPrestamos++;
 			this.numDevueltos = 1;
 		}
-		pf.prestamoDevuelto();
+		prestamos.add(pf);		
 	}
 	
 	/**

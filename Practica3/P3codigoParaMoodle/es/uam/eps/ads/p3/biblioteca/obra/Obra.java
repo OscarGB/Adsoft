@@ -65,4 +65,14 @@ public abstract class Obra {
 		
 		return true;
 	}
+	
+	
+
+	/**
+	 * Función para Override en Libro y Pelicula
+	 * @return 0
+	 */
+	public int getPlazo(){
+		return 0;
+	}
 }

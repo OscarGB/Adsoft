@@ -79,6 +79,14 @@ public class Libro extends Obra{
 	}
 
 	/**
+	 * Devuelve el plazo de devuelta de un libro
+	 * @return 
+	 */
+	public int getPlazo(){
+		return this.plazo;
+	}
+	
+	/**
 	 * Getter del número de ediciones
 	 */
 	public int getNumedicion() {
