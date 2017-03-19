@@ -1,6 +1,8 @@
 package es.uam.eps.ads.p3.biblioteca.usuario;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import es.uam.eps.ads.p3.biblioteca.prestamo.Prestamo;
 
@@ -77,5 +79,26 @@ public abstract class Usuario {
 	public String toString(){
 		return null;
 	}
+
+	/**
+	 * Función que comprueba si un Usuario puede prestar una obra
+	 * @return boolean true si puede prestar
+	 */
+	public boolean puedePrestar() {
+		if(this.prestamos.size() >= this.maxPrestamos){
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * @return 
+	 */
+	public List<Prestamo> getPrestamos() {
+		return Collections.unmodifiableList(this.prestamos);
+	}
+
+	
+	
 	
 }
