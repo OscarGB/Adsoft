@@ -72,7 +72,7 @@ public abstract class Obra {
 	 * Función para Override en Libro y Pelicula
 	 * @return 0
 	 */
-	public int getPlazo(){
+	public int plazoPrestamo(){
 		return 0;
 	}
 }

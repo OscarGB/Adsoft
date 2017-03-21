@@ -15,7 +15,7 @@ public class Pelicula extends Obra {
 	/**
 	 * Plazo fijo de préstamo de una película
 	 */
-	public static int PLAZO_PELICULA = 2;
+	public static final int PLAZO_PELICULA = 2;
 	
 	/**
 	 * Constructor de la clase Película
@@ -58,7 +58,7 @@ public class Pelicula extends Obra {
 	 * @return 
 	 */
 	@Override
-	public int getPlazo(){
+	public int plazoPrestamo(){
 		return PLAZO_PELICULA;
 	}
 	

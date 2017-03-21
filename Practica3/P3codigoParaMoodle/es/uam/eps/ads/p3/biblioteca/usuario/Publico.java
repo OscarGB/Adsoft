@@ -35,6 +35,9 @@ public class Publico extends Usuario{
 	@Override
 	public void sancionarPorRetraso(int i){
 		this.numDevueltos -= i+1;
+		if(this.numDevueltos < 0){
+			this.numDevueltos = 0;
+		}
 		this.maxPrestamos = PRESTAMOS_PUBLICO;
 	}
 	

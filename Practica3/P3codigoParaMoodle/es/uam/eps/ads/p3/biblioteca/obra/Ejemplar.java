@@ -82,15 +82,15 @@ public class Ejemplar {
 	/**
 	 * Función para devolver un ejemplar.
 	 */
-	public void devolver() {
+	public boolean devolver() {
 		if(this.prestado == false){
-			return;
+			return false;
 		}
 		
 		this.pre.getUsuario().eliminarPrestamo(pre);
 		this.prestado = false;
 		this.pre = null;
-		return;
+		return true;
 		
 	}
 	
@@ -114,8 +114,8 @@ public class Ejemplar {
 	 * devuelve el plazo de la obra del ejemplar
 	 * @return
 	 */
-	public int getPlazo() {
-		return this.obra.getPlazo();
+	public int plazoPrestamo() {
+		return this.obra.plazoPrestamo();
 	}
 	
 }

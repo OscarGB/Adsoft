@@ -30,7 +30,7 @@ public class Libro extends Obra{
 	/**
 	 * Macro para definir el plazo de libro predeterminado
 	 */
-	private static int PLAZO_LIBRO = 25;
+	private static final int PLAZO_LIBRO = 25;
 	
 	
 	/**
@@ -82,7 +82,7 @@ public class Libro extends Obra{
 	 * Devuelve el plazo de devuelta de un libro
 	 * @return 
 	 */
-	public int getPlazo(){
+	public int plazoPrestamo(){
 		return this.plazo;
 	}
 	
