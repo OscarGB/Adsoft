@@ -1,6 +1,4 @@
 package es.uam.eps.ads.p3.biblioteca.prestamo;
-import java.time.LocalDate;
-
 import es.uam.eps.ads.p3.biblioteca.obra.Ejemplar;
 import es.uam.eps.ads.p3.biblioteca.usuario.Usuario;
 import es.uam.eps.ads.p3.fechasimulada.FechaSimulada;
