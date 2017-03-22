@@ -1,4 +1,12 @@
 package es.uam.eps.ads.p3.biblioteca.prestamo;
+<<<<<<< HEAD
+=======
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+>>>>>>> b45149c342343170a8c9975e23b9792c8851b567
 import es.uam.eps.ads.p3.biblioteca.obra.Ejemplar;
 import es.uam.eps.ads.p3.biblioteca.usuario.Usuario;
 import es.uam.eps.ads.p3.fechasimulada.FechaSimulada;
@@ -17,6 +25,16 @@ public class Prestamo {
 	private Ejemplar ejemplar;
 	
 	/**
+	 * Flag para saber si se ha devuelto el ejemplar
+	 */
+	private boolean yaDevuelto;
+	
+	/**
+	 * String de la fecha de devolución de un préstamo
+	 */
+	public String fechaDevolucion; 
+	
+	/**
 	 * Fecha de fin de prestamo
 	 */
 	private String finPrestamo;
@@ -26,9 +44,9 @@ public class Prestamo {
 	public static int prestamosHistorico = 0;
 	
 	/**
-	 * Número de prestamos pendientes
+	 * Array de prestamos pendientes
 	 */
-	public static int prestamosPendientes = 0;
+	public static ArrayList<Prestamo> pendientes = new ArrayList<Prestamo>();
 	
 	/**
 	 * Usuario que realiza el préstamo
@@ -43,9 +61,11 @@ public class Prestamo {
 	public Prestamo(Ejemplar ejemplar, Usuario user){
 		this.ejemplar = ejemplar;
 		this.user = user;
+		this.yaDevuelto = false;
+		this.fechaDevolucion = "";
 		Prestamo.prestamosHistorico++;
-		Prestamo.prestamosPendientes++;
-		int plazo = ejemplar.getPlazo();
+		Prestamo.pendientes.add(this);
+		int plazo = ejemplar.plazoPrestamo();
 		FechaSimulada.avanzar(plazo);
 		this.finPrestamo = FechaSimulada.getHoy().toString();
 		FechaSimulada.avanzar(-plazo);
@@ -64,7 +84,7 @@ public class Prestamo {
 	 */
 	public void prestamoDevuelto() {
 		this.ejemplar.getObra().obraDevuelta();
-		Prestamo.prestamosPendientes--;
+		Prestamo.pendientes.remove(this);
 	}
 
 	/**
@@ -96,7 +116,7 @@ public class Prestamo {
 	 * @return int prestamos pendientes
 	 */
 	public static int numPrestamosPendientes(){
-		return Prestamo.prestamosPendientes;
+		return Prestamo.pendientes.size();
 	}
 	
 	/**
@@ -107,7 +127,70 @@ public class Prestamo {
 	public String toString(){
 		String aux;
 		aux = this.ejemplar.toString();
+		if(yaDevuelto == true){
+			aux += " prestado a " + this.user.toString() + " hasta " + this.finPrestamo + " devuelto " + this.fechaDevolucion;
+		}
 		return aux;
-		//if(this.)
+	}
+	
+	/**
+	 * Método privado para saber el número de días de retraso
+	 * en formato LocalDate
+	 * @return dias de retraso
+	 */
+	private int diasRetraso(){
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		
+		LocalDate date = LocalDate.parse(this.finPrestamo, formatter);
+		
+		return Period.between(date, FechaSimulada.getHoy()).getDays();
+	}
+
+	/**
+	 * Método para devolver un préstamo
+	 * @return boolean
+	 */
+	public boolean devolver() {
+		int numDiasRetraso = this.diasRetraso();
+		
+		if(numDiasRetraso > 0){
+			this.user.sancionarPorRetraso(numDiasRetraso);
+		}
+		
+		this.fechaDevolucion = FechaSimulada.getHoy().toString();
+		
+		this.yaDevuelto = true;
+		
+		return this.ejemplar.devolver();
+	}
+
+	/**
+	 * Método que devuelve los prestamos pasados de vencimiento
+	 * @return ArrayList
+	 */
+	public static ArrayList<Prestamo> pasadosDeVencimiento() {
+		ArrayList<Prestamo> pasados = new ArrayList<Prestamo>();
+		
+		for(Prestamo p : Prestamo.pendientes){
+			if(p.diasRetraso() > 0){
+				pasados.add(p);
+			}
+		}
+		return pasados;
+	}
+
+	/**
+	 * Método que devuelve los préstamos con vencimiento hoy
+	 * @return ArrayList
+	 */
+	public static ArrayList<Prestamo> conVencimientoHoy() {
+		ArrayList<Prestamo> vencimientohoy = new ArrayList<Prestamo>();
+		
+		for(Prestamo p : Prestamo.pendientes){
+			if(p.diasRetraso() == 0){
+				vencimientohoy.add(p);
+			}
+		}
+		return vencimientohoy;
 	}
 }
