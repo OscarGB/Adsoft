@@ -1,4 +1,10 @@
-package unit;
+package testers;
+
+import exceptions.QuantityException;
+import interfaces.IMagnitude;
+import unit.Magnitude;
+import unit.SiLengthMetricSystem;
+import unit.SiTimeMetricSystem;
 
 public class MainTest {   
 	public static void main(String[] args) throws QuantityException{  

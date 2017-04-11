@@ -1,5 +1,9 @@
 package unit;
 
+import exceptions.QuantityException;
+import interfaces.IMetricSystem;
+import interfaces.IPhysicalUnit;
+
 public class PhysicalUnit implements IPhysicalUnit {
 	
 	private Quantity quantity;

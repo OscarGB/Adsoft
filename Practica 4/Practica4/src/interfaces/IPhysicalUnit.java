@@ -1,4 +1,7 @@
-package unit;
+package interfaces;
+
+import exceptions.QuantityException;
+import unit.Quantity;
 
 public interface IPhysicalUnit {
 	boolean canTransformTo(IPhysicalUnit u);

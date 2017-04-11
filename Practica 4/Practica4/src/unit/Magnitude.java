@@ -1,5 +1,9 @@
 package unit;
 
+import exceptions.QuantityException;
+import interfaces.IMagnitude;
+import interfaces.IPhysicalUnit;
+
 public class Magnitude implements IMagnitude {
 	
 	private double valor;

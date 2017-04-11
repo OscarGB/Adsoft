@@ -1,6 +1,6 @@
-package unit;
+package exceptions;
 
-
+import unit.Quantity;
 
 /**
  * Excepción de tipo QuantityException

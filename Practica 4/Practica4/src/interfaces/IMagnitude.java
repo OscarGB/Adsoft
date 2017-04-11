@@ -1,4 +1,6 @@
-package unit;
+package interfaces;
+
+import exceptions.QuantityException;
 
 public interface IMagnitude {  
 	IMagnitude add (IMagnitude m) throws QuantityException;  
