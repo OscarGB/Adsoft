@@ -1,5 +1,11 @@
 package exceptions;
 
+
+/**
+ * Excepción de tipo UnknowUnitException
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class UnknownUnitException extends Exception {
 
 	/**
