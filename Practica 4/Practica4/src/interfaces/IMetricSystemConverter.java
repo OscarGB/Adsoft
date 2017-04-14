@@ -1,38 +1,32 @@
 package interfaces;
 
-import exceptions.UnknownUnitException;
+import exceptions.*;
 
-/**
- * Interfaz para Conversores entre sistemas
- * @author Oscar Gomez
- * @author Jose Ignacio Gomez
- */
-public interface IMetricSystemConverter {
-	
+public interface IMetricSystemConverter {  
 	/**
-	 * Devuelve el Sistema Métrico fuente
-	 * @return
+	 * Sistema de origen
+	 * @return MetricSystem
 	 */
-	IMetricSystem sourceSystem();
+	IMetricSystem sourceSystem();  
 	
 	/**
-	 * Devuelve el Sistema Métrico de destino
-	 * @return
+	 * Sistema destino
+	 * @return MetricSystem
 	 */
-	IMetricSystem targetSystem();
+	IMetricSystem targetSystem();  
 	
 	/**
-	 * Transforma una Magnitud del Sistema Métrico fuente a una Unidad Física del Sistema Métrico destino
-	 * @param from
-	 * @param to
-	 * @return
+	 * Método para transformar entre SI
+	 * @param Magnitud de origen
+	 * @param Sistema destino
+	 * @return Magnitude
 	 * @throws UnknownUnitException
 	 */
 	IMagnitude transformTo(IMagnitude from, IPhysicalUnit to) throws UnknownUnitException;
 	
 	/**
-	 * Devuelve un Conversor que realiza la conversión inversa
-	 * @return
+	 * Método para guardar el conversor inverso
+	 * @return Conversor
 	 */
-	IMetricSystemConverter reverse();
+	IMetricSystemConverter reverse(); 
 }

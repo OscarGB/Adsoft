@@ -20,4 +20,11 @@ public interface IMetricSystem {
 	 * @return
 	 */
 	Collection<IPhysicalUnit> units();
+	
+	/**
+	 * Devuelve el convertidor de sistema métrico
+	 * @param Sistema al que se convierte
+	 * @return converter
+	 */
+	//IMetricSystemConverter getConverter(IMetricSystem to);
 }

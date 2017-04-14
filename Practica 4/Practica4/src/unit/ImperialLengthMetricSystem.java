@@ -40,7 +40,7 @@ public class ImperialLengthMetricSystem extends MetricSystem {
 	/**
 	 * Constructor de ImperialLengthMetricSystem
 	 */
-	private ImperialLengthMetricSystem() {
+	public ImperialLengthMetricSystem() {
 		super();
 	}
 	

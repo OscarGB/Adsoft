@@ -1,5 +1,6 @@
 package exceptions;
 
+import interfaces.*;
 
 /**
  * Excepción de tipo UnknowUnitException
@@ -12,5 +13,35 @@ public class UnknownUnitException extends Exception {
 	 * Serial
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Unidad de la excepcion
+	 */
+	private IPhysicalUnit unit1;
+	
+	/**
+	 * Unidad de la excepcion
+	 */
+	private IPhysicalUnit unit2;
+	
+	/**
+	 * Constructor de la excepcion
+	 * @param unit
+	 */
+	public UnknownUnitException(IPhysicalUnit unit1, IPhysicalUnit unit2){
+		this.unit1 = unit1;
+		this.unit2 = unit2;
+	}
+	
+	/**
+	 * (Override) toString
+	 * @return String
+	 */
+	@Override
+	public String toString(){
+		return "Cannot transform " + this.unit1.abbrev() + " " + 
+				this.unit1.getQuantity() + "to " + this.unit2.abbrev() + " "
+				+ this.unit2.getQuantity();
+	}
 
 }

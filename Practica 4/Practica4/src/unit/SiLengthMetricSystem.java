@@ -3,6 +3,7 @@ package unit;
 import java.util.Arrays;
 import java.util.Collection;
 
+import converters.SiLength2ImperialConverter;
 import interfaces.IMetricSystem;
 import interfaces.IPhysicalUnit;
 
@@ -40,7 +41,7 @@ public class SiLengthMetricSystem extends MetricSystem{
 	/**
 	 * Constructor de SiLengthMetricSystem
 	 */	
-	private SiLengthMetricSystem() {
+	public SiLengthMetricSystem() {
 		super();
 	}
 
@@ -63,5 +64,10 @@ public class SiLengthMetricSystem extends MetricSystem{
 	public Collection<IPhysicalUnit> units() {
 		IPhysicalUnit ar[] = new IPhysicalUnit[] {SiLengthMetricSystem.MILLIMETER, SiLengthMetricSystem.METER, SiLengthMetricSystem.KILOMETER};
 		return Arrays.asList(ar);
+	}
+
+	public static void registerConverter(SiLength2ImperialConverter siLength2ImperialConverter) {
+		// TODO Auto-generated method stub
+		
 	}
 }
