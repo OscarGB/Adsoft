@@ -1,7 +1,9 @@
 package unit;
 
 import exceptions.QuantityException;
+import exceptions.UnknownUnitException;
 import interfaces.IMagnitude;
+import interfaces.IMetricSystemConverter;
 import interfaces.IPhysicalUnit;
 
 /**
@@ -64,13 +66,22 @@ public class Magnitude implements IMagnitude {
 	/**
 	 * Método para transformar una Magnitud a una Unidad física concreta (siempre que se pueda)
 	 * @param c
-	 * @return
+	 * @return magnitud
 	 * @throws QuantityException
+	 * @throws UnknownUnitException
 	 */
 	@Override
 	public IMagnitude transformTo(IPhysicalUnit c) throws QuantityException {
-		//El QuantityException lo lanza el transformTo de PhysicalUnit
-		return new Magnitude(this.getUnit().transformTo(this.getValue(),  c), c);
+		if(this.getUnit().getMetricSystem().equals(c.getMetricSystem()) == true){
+			return new Magnitude(this.getUnit().transformTo(this.getValue(),  c), c);
+		}
+		
+		IMetricSystemConverter conv = this.getUnit().getMetricSystem().getConverter(c.getMetricSystem());
+		if(conv == null){
+			throw new UnknownUnitException(this.getUnit(), c);
+		}
+		
+		return conv.transformTo(this, c);
 		
 	}
 

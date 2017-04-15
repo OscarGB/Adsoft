@@ -26,5 +26,5 @@ public interface IMetricSystem {
 	 * @param Sistema al que se convierte
 	 * @return converter
 	 */
-	//IMetricSystemConverter getConverter(IMetricSystem to);
+	IMetricSystemConverter getConverter(IMetricSystem to);
 }

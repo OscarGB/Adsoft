@@ -1,13 +1,11 @@
 package testers;
 
-import exceptions.QuantityException;
+import exceptions.*;
 import interfaces.IMagnitude;
-import unit.Magnitude;
-import unit.SiLengthMetricSystem;
-import unit.SiTimeMetricSystem;
+import unit.*;
 
 public class MainTest {   
-	public static void main(String[] args) throws QuantityException{  
+	public static void main(String[] args) throws QuantityException, UnknownUnitException{  
 		IMagnitude m  = new Magnitude(12.5, SiLengthMetricSystem.KILOMETER);  
 		Magnitude m2 = new Magnitude(12.5, SiLengthMetricSystem.METER);          
 		System.out.println(m2.add(m));   // m converted to meters and added to m2  

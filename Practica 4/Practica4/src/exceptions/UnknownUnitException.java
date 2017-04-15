@@ -7,7 +7,7 @@ import interfaces.*;
  * @author Oscar Gomez
  * @author Jose Ignacio Gomez
  */
-public class UnknownUnitException extends Exception {
+public class UnknownUnitException extends QuantityException {
 
 	/**
 	 * Serial
@@ -29,6 +29,7 @@ public class UnknownUnitException extends Exception {
 	 * @param unit
 	 */
 	public UnknownUnitException(IPhysicalUnit unit1, IPhysicalUnit unit2){
+		super(null, null);
 		this.unit1 = unit1;
 		this.unit2 = unit2;
 	}
@@ -40,7 +41,7 @@ public class UnknownUnitException extends Exception {
 	@Override
 	public String toString(){
 		return "Cannot transform " + this.unit1.abbrev() + " " + 
-				this.unit1.getQuantity() + "to " + this.unit2.abbrev() + " "
+				this.unit1.getQuantity() + " to " + this.unit2.abbrev() + " "
 				+ this.unit2.getQuantity();
 	}
 

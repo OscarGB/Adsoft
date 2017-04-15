@@ -39,6 +39,7 @@ public class QuantityException extends Exception {
 		this.q2 = q2;
 	}
 	
+	
 	// Métodos
 	
 	/** (Override)

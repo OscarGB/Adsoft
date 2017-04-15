@@ -1,6 +1,7 @@
 package interfaces;
 
 import exceptions.QuantityException;
+import exceptions.UnknownUnitException;
 
 /**
  * Interfaz para Magnitudes
@@ -14,6 +15,7 @@ public interface IMagnitude {
 	 * @param m
 	 * @return
 	 * @throws QuantityException
+	 * @throws UnknownUnitException 
 	 */
 	IMagnitude add (IMagnitude m) throws QuantityException; 
 	
@@ -22,6 +24,7 @@ public interface IMagnitude {
 	 * @param m
 	 * @return
 	 * @throws QuantityException
+	 * @throws UnknownUnitException 
 	 */
 	IMagnitude subs(IMagnitude m) throws QuantityException;  
 	
@@ -30,6 +33,7 @@ public interface IMagnitude {
 	 * @param c
 	 * @return
 	 * @throws QuantityException
+	 * @throws UnknownUnitException 
 	 */
 	IMagnitude transformTo(IPhysicalUnit c) throws QuantityException;  
 	
