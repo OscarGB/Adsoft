@@ -3,6 +3,11 @@ package converters;
 import interfaces.*;
 import unit.*;
 
+/**
+ * Conversor de Si a imperial
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class SiLength2ImperialConverter extends Converter {
 	
 	/**

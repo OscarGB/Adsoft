@@ -8,6 +8,11 @@ import interfaces.IMetricSystemConverter;
 import interfaces.IPhysicalUnit;
 import unit.Magnitude;
 
+/**
+ * Conversor
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class Converter implements IMetricSystemConverter {
 	
 	/**
@@ -28,7 +33,7 @@ public class Converter implements IMetricSystemConverter {
 	/**
 	 * Constructor de la clase abstracta
 	 * @param source
-	 * @param tarjet
+	 * @param target
 	 * @param mult
 	 */
 	protected Converter(IMetricSystem source, IMetricSystem target, float mult){
@@ -58,8 +63,8 @@ public class Converter implements IMetricSystemConverter {
 
 	/**
 	 * Método para transformar SI a Imperial. Primero pasa a metros, y luego pasa los metros a foot
-	 * @param magnitud en el SI
-	 * @param unidad fisica destino
+	 * @param from magnitud en el SI
+	 * @param to unidad fisica destino
 	 * @return Magnitud en Imperial
 	 */
 	@Override
