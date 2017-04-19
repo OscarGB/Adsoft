@@ -1,12 +1,20 @@
-package interfaces;
+package observers;
 
 import java.util.ArrayList;
+
+import interfaces.ObservableProperty;
+import interfaces.PropertyObserver;
 
 public abstract class DefaultObservableProperty<V> implements ObservableProperty<V> {
 
 	private V value;
 	
 	private ArrayList<PropertyObserver<V>> observers;
+	
+	public DefaultObservableProperty(V value){
+		this.value = value;
+		this.observers = new ArrayList<PropertyObserver<V>>();
+	}
 	
 	@Override
 	public V getValue() {
@@ -25,6 +33,9 @@ public abstract class DefaultObservableProperty<V> implements ObservableProperty
 	}
 	
 	protected void setValue(V newValue){
+		if(newValue == null){
+			return;
+		}
 		if(newValue.equals(value)){
 			return;
 		}
