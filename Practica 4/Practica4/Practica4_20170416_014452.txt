@@ -1,0 +1,3 @@
+ERROR - 01:44:52: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 01:45:22: Convert Practica4
+ERROR - 01:45:22: java.net.MalformedURLException: unknown protocol: pathmap
