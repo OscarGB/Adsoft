@@ -17,9 +17,9 @@ public interface IMetricSystemConverter {
 	
 	/**
 	 * Método para transformar entre SI
-	 * @param Magnitud de origen
-	 * @param Sistema destino
-	 * @return Magnitude
+	 * @param from, Magnitud de origen
+	 * @param to, Sistema destino
+	 * @return IMagnitude
 	 * @throws UnknownUnitException
 	 */
 	IMagnitude transformTo(IMagnitude from, IPhysicalUnit to) throws UnknownUnitException;

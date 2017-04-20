@@ -9,7 +9,7 @@ import interfaces.IMetricSystemConverter;
 import interfaces.IPhysicalUnit;
 
 /**
- * Sistema Métrico
+ * Test para la conversión
  * @author Oscar Gomez
  * @author Jose Ignacio Gomez
  */
@@ -35,7 +35,7 @@ public abstract class MetricSystem implements IMetricSystem {
 	
 	/**
 	 * Devuelve el convertidor de sistema métrico
-	 * @param Sistema al que se convierte
+	 * @param to, Sistema al que se convierte
 	 * @return converter
 	 */
 	public IMetricSystemConverter getConverter(IMetricSystem to){
@@ -53,7 +53,7 @@ public abstract class MetricSystem implements IMetricSystem {
 	
 	/**
 	 * Metodo para aniadir un conversor al registro
-	 * @param conversor
+	 * @param conv, conversor
 	 * @return boolean
 	 */
 	public static boolean registerConverter(IMetricSystemConverter conv){
@@ -84,7 +84,7 @@ public abstract class MetricSystem implements IMetricSystem {
 	
 	/**
 	 * (Override) Metodo equals para comparar MetricSystems
-	 * @param Object obg
+	 * @param Object obj
 	 * @return boolean
 	 */
 	@Override
@@ -95,9 +95,7 @@ public abstract class MetricSystem implements IMetricSystem {
 		}
 		return false;
 	}
-	
-	//TODO metodo hash
-	
+		
 	/**
 	 * Metodo toString para debugging
 	 */

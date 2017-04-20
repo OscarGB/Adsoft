@@ -26,7 +26,8 @@ public class UnknownUnitException extends QuantityException {
 	
 	/**
 	 * Constructor de la excepcion
-	 * @param unit
+	 * @param unit1
+	 * @param unit2
 	 */
 	public UnknownUnitException(IPhysicalUnit unit1, IPhysicalUnit unit2){
 		super(null, null);
