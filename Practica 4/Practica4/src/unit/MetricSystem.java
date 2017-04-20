@@ -84,7 +84,7 @@ public abstract class MetricSystem implements IMetricSystem {
 	
 	/**
 	 * (Override) Metodo equals para comparar MetricSystems
-	 * @param Object obg
+	 * @param Object obj
 	 * @return boolean
 	 */
 	@Override
