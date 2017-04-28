@@ -5,29 +5,49 @@ import observers.*;
 public class Tester1 {
 
 	public static void main(String[] args) {
-		TiempoTareasObserver observer = new TiempoTareasObserver();
-		TiempoTareas tiempo = new TiempoTareas(0);
+		TiempoTareas padre = new TiempoTareas(5);
+		TiempoTareas hijo = new TiempoTareas(0);
 		
-		//Añadimos el observer
-		tiempo.addObserver(observer);
+		//No deberia aumentar el valor del padre
+		padre.addTarea(hijo);
 		
-		//Debe imprimir una notificación de cambio de valor emitida por el observer
-		tiempo.incrementTime(12);
+		//Padre deberia pasar a valer 7
+		hijo.incrementTime(2);
 		
-		//El valor será negativo, por lo que tiene que saltar una excepción
+		System.out.println("Deberia valer 7: " + padre.getValue());
+		
+		//Decrementamos el tiempo mas de lo que se puede
 		try{
-			tiempo.incrementTime(-15);
+			hijo.incrementTime(-9);
 		} catch(IllegalArgumentException e){
-			System.out.println("Ha saltado la excepción correctamente");
+			System.out.println("Se ha tratado de decrementar demasiado el tiempo.");
 		}
 		
-		//Al quitar el observer dejará de imprimir la notificación
-		tiempo.removeObserver(observer);
+		System.out.println("Padre deberia valer 5: " + padre.getValue());
+		System.out.println("Hijo deberia valer 0: " + hijo.getValue());
 		
-		tiempo.incrementTime(8);
+		//Ahora creamos un nieto
+		padre = new TiempoTareas(5);
+		hijo = new TiempoTareas(0);
+		TiempoTareas nieto = new TiempoTareas(3);
 		
-		//El valor debería ser 20
-		System.out.println("Valor final: " + tiempo.getValue());
+		//Hijo deberia valer 3
+		hijo.addTarea(nieto);
+		
+		//Padre deberia valer 8
+		padre.addTarea(hijo);
+		
+		//Deberian modificarse tanto nieto, como hijo y padre
+		nieto.incrementTime(-2);
+		
+		System.out.println("Padre deberia valer 6: " + padre.getValue());
+		System.out.println("Hijo deberia valer 1: " + hijo.getValue());
+		System.out.println("Nieto deberia valer 1: " + nieto.getValue());
+		
+		hijo.removeTarea(nieto);
+		System.out.println("Padre deberia valer 5: " + padre.getValue());
+		System.out.println("Hijo deberia valer 0: " + hijo.getValue());
+		
 	}
 
 }

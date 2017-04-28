@@ -7,9 +7,9 @@ import interfaces.PropertyObserver;
 
 public abstract class DefaultObservableProperty<V> implements ObservableProperty<V> {
 
-	private V value;
+	protected V value;
 	
-	private ArrayList<PropertyObserver<V>> observers;
+	protected ArrayList<PropertyObserver<V>> observers;
 	
 	public DefaultObservableProperty(V value){
 		this.value = value;
