@@ -1,18 +1,30 @@
 package tareas;
 
-import interfaces.ObservableProperty;
-import interfaces.PropertyObserver;
-import observers.TiempoTareas;
+import java.util.TreeSet;
 
-public class Tasks implements PropertyObserver<Integer>{
+public class Tasks {
+	
+	private TreeSet<Task> set = new TreeSet<Task>();
+	
+	private static Tasks instance = new Tasks();
 	
 	private Tasks(){
 		
 	}
 
-	@Override
-	public void propertyChanged(ObservableProperty<Integer> property, Integer oldValue) {
-		// TODO Auto-generated method stub
-		
+	public static Tasks getInstance(){
+		return Tasks.instance;
 	}
+	
+	public Task newTask(String taskName) throws IllegalArgumentException{
+		Task task = new Task(taskName);
+		
+		if(this.set.add(task) == false){
+			throw new IllegalArgumentException();
+		}
+		else{
+			return task;
+		}
+	}
+	
 }
