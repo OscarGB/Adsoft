@@ -1,11 +1,17 @@
 package tareas;
 
+import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
 import interfaces.AdjustableTime;
 import observers.TiempoTareas;
 
+/**
+ * Clase Task
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class Task implements Comparable {
 	
 	/**
@@ -75,10 +81,12 @@ public class Task implements Comparable {
 	 * @return
 	 */
 	public boolean addTask(Task t) throws IllegalArgumentException{
-		if(t.getParent() != null) throw new IllegalArgumentException();
 		
 		if(this.containsTask(t) == true) return false;
+		if(t.getParent() != null) throw new IllegalArgumentException();
 		
+		this.dedicado.addTarea((TiempoTareas)t.getDedicado());
+		this.estimado.addTarea((TiempoTareas)t.getEstimated());
 		t.setParent(this);
 		
 		return true;
@@ -89,7 +97,9 @@ public class Task implements Comparable {
 	 * @param parent
 	 */
 	public void setParent(Task parent) throws IllegalArgumentException{
-		if(this.containsTask(parent)) throw new IllegalArgumentException();
+		if(parent != null){
+			if(this.containsTask(parent)) throw new IllegalArgumentException();
+		}
 		if(this.parent != null) this.parent.hijas.remove(this);
 		this.parent = parent;
 		if(parent != null){
@@ -102,7 +112,8 @@ public class Task implements Comparable {
 	 * @return
 	 */
 	public Set<Task> getTasks(){
-		return this.hijas;
+		Set<Task> set = Collections.unmodifiableSet(this.hijas);
+		return set;
 	}
 
 	/**
@@ -112,6 +123,8 @@ public class Task implements Comparable {
 	 */
 	public boolean removeTask(Task task) {
 		if(this.containsTask(task) == false) return false;
+		this.dedicado.removeTarea((TiempoTareas)task.getDedicado());
+		this.estimado.removeTarea((TiempoTareas)task.getEstimated());
 		task.setParent(null);
 		return true;
 	}
@@ -166,6 +179,15 @@ public class Task implements Comparable {
 		Task task = (Task) obj;
 		
 		return task.getName().toLowerCase().trim().compareTo(this.getName().toLowerCase().trim());
+	}
+	
+	/**
+	 * (Override) toString de una Task
+	 * @return
+	 */
+	@Override
+	public String toString(){
+		return "Task: " + this.taskName + " Tiempo estimado: " + this.getEstimated().getValue() + " Tiempo dedicado: " + this.getDedicado().getValue();
 	}
 	
 	

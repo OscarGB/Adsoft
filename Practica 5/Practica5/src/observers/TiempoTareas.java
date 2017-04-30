@@ -6,8 +6,16 @@ import interfaces.AdjustableTime;
 import interfaces.ObservableProperty;
 import interfaces.PropertyObserver;
 
+/**
+ * Clase TiempoTareas
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class TiempoTareas extends DefaultObservableProperty<Integer> implements AdjustableTime, PropertyObserver<Integer>{
 	
+	/**
+	 * Array con las subtareas que conforman esta tarea
+	 */
 	private ArrayList<TiempoTareas> subtareas; 
 
 	/**

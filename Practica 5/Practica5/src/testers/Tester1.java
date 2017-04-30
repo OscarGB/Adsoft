@@ -2,6 +2,11 @@ package testers;
 
 import observers.*;
 
+/**
+ * Clase Tester1
+ * @author Oscar Gomez
+ * @author Jose Ignacio Gomez
+ */
 public class Tester1 {
 
 	public static void main(String[] args) {
