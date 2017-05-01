@@ -12,7 +12,7 @@ import observers.TiempoTareas;
  * @author Oscar Gomez
  * @author Jose Ignacio Gomez
  */
-public class Task implements Comparable {
+public class Task implements Comparable<Object> {
 	
 	/**
 	 * Nombre de la tarea
@@ -87,7 +87,9 @@ public class Task implements Comparable {
 		
 		this.dedicado.addTarea((TiempoTareas)t.getDedicado());
 		this.estimado.addTarea((TiempoTareas)t.getEstimated());
-		t.setParent(this);
+		t.parent = this;
+		
+		this.hijas.add(t);
 		
 		return true;
 	}
@@ -97,14 +99,15 @@ public class Task implements Comparable {
 	 * @param parent
 	 */
 	public void setParent(Task parent) throws IllegalArgumentException{
-		if(parent != null){
-			if(this.containsTask(parent)) throw new IllegalArgumentException();
+		if(parent == null){
+			if(this.parent != null){
+				this.parent.removeTask(this);
+				return;
+			}
+			throw new IllegalArgumentException();
 		}
-		if(this.parent != null) this.parent.hijas.remove(this);
-		this.parent = parent;
-		if(parent != null){
-			this.parent.hijas.add(this);
-		}
+		if(this.containsTask(parent)) throw new IllegalArgumentException();
+		parent.addTask(this);
 	}
 	
 	/**
@@ -125,7 +128,8 @@ public class Task implements Comparable {
 		if(this.containsTask(task) == false) return false;
 		this.dedicado.removeTarea((TiempoTareas)task.getDedicado());
 		this.estimado.removeTarea((TiempoTareas)task.getEstimated());
-		task.setParent(null);
+		this.hijas.remove(task);
+		task.parent = null;
 		return true;
 	}
 
@@ -177,8 +181,8 @@ public class Task implements Comparable {
 	@Override
 	public int compareTo(Object obj) {
 		Task task = (Task) obj;
-		
-		return task.getName().toLowerCase().trim().compareTo(this.getName().toLowerCase().trim());
+		//El menos hace que se ordenen alfabéticamente de forma correcta
+		return -(task.getName().compareTo(this.getName()));
 	}
 	
 	/**
@@ -187,7 +191,11 @@ public class Task implements Comparable {
 	 */
 	@Override
 	public String toString(){
-		return "Task: " + this.taskName + " Tiempo estimado: " + this.getEstimated().getValue() + " Tiempo dedicado: " + this.getDedicado().getValue();
+		String aux = "Task: " + this.taskName + ", Tiempo estimado: " + this.getEstimated().getValue() + ", Tiempo dedicado: " + this.getDedicado().getValue();
+		if(this.getParent() != null){
+			aux = aux + ", Padre: " + this.getParent().getName();
+		}
+		return aux;
 	}
 	
 	
