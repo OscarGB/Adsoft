@@ -26,7 +26,7 @@ public class Tasks {
 	private Tasks(){}
 	
 	/**
-	 * Método que devuelve la instancia del patrón
+	 * Método que devuelve la instanciaDefaultObservableProperty del patrón
 	 * @return
 	 */
 	public static Tasks getInstance(){

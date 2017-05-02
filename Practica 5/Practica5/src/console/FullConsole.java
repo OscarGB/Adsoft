@@ -15,17 +15,17 @@ public class FullConsole extends TextConsole {
 	/**
 	 * Momento en el que empezó a correr la Task actual
 	 */
-	Date startDate;
+	private Date startDate;
 	
 	/**
 	 * task que esta corriendo
 	 */
-	Task running;
+	private Task running;
 	
 	/**
 	 * tasks que contiene
 	 */
-	Tasks tasks;
+	private Tasks tasks;
 	
 	/**
 	 * Constructor de FullConsole
